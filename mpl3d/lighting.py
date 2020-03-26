@@ -3,6 +3,7 @@
 # Distributed under the (new) BSD License.
 # -----------------------------------------------------------------------------
 import numpy as np
+from mpl3d import glm
 
 
 def compact(vertices, indices, tolerance=1e-3):
@@ -85,3 +86,24 @@ def normals(vertices, indices, compact=True):
     if compact:
         return normals[mapping]
     return normals
+
+
+def lighting(F, direction=(1,1,1), color=(1,0,0), specular=False):
+    """
+    """
+    
+    # Faces center
+    C = F.mean(axis=1)
+    # Faces normal
+    N = glm.normalize(np.cross(F[:,2]-F[:,0], F[:,1]-F[:,0]))
+    # Relative light direction
+    D = glm.normalize(C - direction)
+    # Diffuse term
+    diffuse = glm.clip((N*D).sum(-1).reshape(-1,1))
+
+    # Specular term
+    if specular:
+        specular = np.power(diffuse,24)
+        return np.maximum(diffuse*color, specular)
+    
+    return diffuse*color

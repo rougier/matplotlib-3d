@@ -2,9 +2,9 @@
 # Copyright (c) 2020 Nicolas P. Rougier. All rights reserved.
 # Distributed under the (new) BSD License.
 # -----------------------------------------------------------------------------
-import glm
 import numpy as np
-from trackball import Trackball
+import mpl3d.glm as glm
+from mpl3d.trackball import Trackball
 
 class Camera():
     """
@@ -33,6 +33,8 @@ class Camera():
 
         scale: float
           scale factor
+
+        view : array (4x4)
         """
         
         self.trackball = Trackball(theta, phi)

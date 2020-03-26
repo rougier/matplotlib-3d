@@ -6,12 +6,9 @@
 #  - Click and drag to change view point
 #  - Scroll up/down for zooming in/out
 # -----------------------------------------------------------------------------
-import glm
 import numpy as np
-from camera import Camera
-import matplotlib.pyplot as plt
-from matplotlib.collections import PolyCollection
-
+from mpl3d import glm
+from mpl3d.camera import Camera
 
 class Cube():
     """ A simple cube """
@@ -38,11 +35,17 @@ class Cube():
         self.collection.set_verts(verts)
 
 
-fig = plt.figure(figsize=(4,4))
-ax = fig.add_axes([0,0,1,1], xlim=[-1,1], ylim=[-1,1], aspect=1)
-ax.axis("off")
 
-camera = Camera(theta=65, phi=40)
-cube = Cube(ax, camera.transform)
-camera.connect(ax, cube.update)
-plt.show()
+# --- main --------------------------------------------------------------------
+if __name__ == "__main__":
+    import matplotlib.pyplot as plt
+    from matplotlib.collections import PolyCollection
+
+    fig = plt.figure(figsize=(4,4))
+    ax = fig.add_axes([0,0,1,1], xlim=[-1,1], ylim=[-1,1], aspect=1)
+    ax.axis("off")
+
+    camera = Camera(theta=65, phi=40)
+    cube = Cube(ax, camera.transform)
+    camera.connect(ax, cube.update)
+    plt.show()

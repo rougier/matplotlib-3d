@@ -34,13 +34,9 @@ if __name__ == "__main__":
     ax.axis("off")
 
     camera = Camera("ortho", scale=2)
-    vertices, faces = obj_load("bunny.obj")
+    vertices, faces = obj_load("data/bunny.obj")
     vertices = glm.fit_unit_cube(vertices)
     mesh = Mesh(ax, camera.transform, vertices, faces,
                 cmap=plt.get_cmap("magma"),  edgecolors=(0,0,0,0.25))
     camera.connect(ax, mesh.update)
-
-    ax.text(0.5, 0.5, "Standford Bunny", transform=ax.transAxes,
-            ha="center", va="center", size=32, zorder=100)
-    
     plt.show()

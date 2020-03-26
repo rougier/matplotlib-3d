@@ -2,7 +2,7 @@
 # Copyright (c) 2020 Nicolas P. Rougier. All rights reserved.
 # Distributed under the (new) BSD License.
 # -----------------------------------------------------------------------------
-# This example shows how to display a mesh
+# This example shows how to have multiviews in 3d (with one interactive)
 # -----------------------------------------------------------------------------
 import numpy as np
 from mpl3d import glm
@@ -21,8 +21,7 @@ def obj_load(filename):
                V.append([float(x) for x in values[1:4]])
            elif values[0] == 'f' :
                Vi.append([int(x) for x in values[1:4]])
-    V = np.array(V)
-    Vi = np.array(Vi)-1
+    V, Vi = np.array(V), np.array(Vi)-1
     V = glm.fit_unit_cube(V)
     return V, Vi
 
@@ -61,7 +60,6 @@ if __name__ == "__main__":
                 cmap=plt.get_cmap("magma"), edgecolors=(0,0,0,0.25))
     camera.connect(ax, mesh.update)
 
-    
     ortho = glm.ortho(-1,+1,-1,+1, 1, 100) @ glm.scale(2)
     
     ax = subplot(222)

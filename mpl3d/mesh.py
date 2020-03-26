@@ -2,8 +2,8 @@
 # Copyright (c) 2020 Nicolas P. Rougier. All rights reserved.
 # Distributed under the (new) BSD License.
 # -----------------------------------------------------------------------------
-import glm
 import numpy as np
+import mpl3d.glm as glm
 import matplotlib as mpl
 from matplotlib.collections import PolyCollection
 
@@ -29,7 +29,7 @@ class Mesh():
         self.mode = mode
         self.update(transform)
         ax.add_collection(self.collection, autolim=False)
-
+        
         
     def update(self, transform):
         """
@@ -43,6 +43,7 @@ class Mesh():
             # Facecolors using depth buffer
             norm = mpl.colors.Normalize(vmin=Z.min(),vmax=Z.max())
             facecolors = self.cmap(norm(Z))
+
         else:
             facecolors = self.facecolors
         edgecolors = self.edgecolors
@@ -84,5 +85,3 @@ class Mesh():
         self.collection.set_edgecolors(edgecolors)
         self.collection.set_antialiased(antialiased)
         
-
-

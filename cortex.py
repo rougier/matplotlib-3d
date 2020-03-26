@@ -2,7 +2,7 @@
 # Copyright (c) 2020 Nicolas P. Rougier. All rights reserved.
 # Distributed under the (new) BSD License.
 # -----------------------------------------------------------------------------
-# This example shows how to display a mesh using nibabel for mesh loading
+# This example shows how to display a mesh using nibabel (for mesh loading)
 # -----------------------------------------------------------------------------
 
 
@@ -16,14 +16,13 @@ if __name__ == "__main__":
     import matplotlib.pyplot as plt
     import nibabel as nb
 
-    
     fig = plt.figure(figsize=(6,6))
     ax = fig.add_axes([0,0,1,1], xlim=[-1,+1], ylim=[-1,+1], aspect=1)
     ax.axis("off")
 
     vertices, faces = nb.freesurfer.io.read_geometry('data/lh.pial')
     vertices = glm.fit_unit_cube(vertices)
-    facecolors = lighting(vertices[faces], direction=(-1,0,.25),
+    facecolors = lighting(vertices[faces], direction=(-1,0,0.25),
                           color=(1.0,0.5,0.5), specular=True)
 
     camera = glm.ortho(-1, +1, -1, +1, 1, 100)

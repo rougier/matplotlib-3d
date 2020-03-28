@@ -18,4 +18,4 @@ Matplotlib](https://matplotlib.org/matplotblog/posts/custom-3d-engine/).
 
 [Read the documentation](doc/README.md)
 
-![](doc/bunnies.png]
+![](doc/bunnies.png)

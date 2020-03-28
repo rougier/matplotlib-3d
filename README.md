@@ -57,7 +57,7 @@ faces = [ [0, 1, 2, 3],   # ABCD: top face
 ```
 
 
-<img src="projections.png" alt="Projections" width="50%" align="right">
+<img src="projections.png" alt="Projections" width="45%" align="right">
 
 In order to render this cube, we have to transform our 3d coordinates into 2D
 coordinates and for this, we need a camera. There are two types of camera
@@ -83,7 +83,7 @@ index = np.argsort(-np.mean(faces[...,2].squeeze(), axis=-1))
 vertices = faces[index][...,:2]
 ```
 
-<img src="simple-cube.png" alt="Projections" width="25%" align="right">
+<img src="simple-cube.png" alt="Projections" width="30%" align="right">
 
 `vertices` is now a sorted array of 2d coordinates descring each face. Let's
 render them using the versatile [PolyCollection](https://matplotlib.org/api/collections_api.html#matplotlib.collections.PolyCollection):
@@ -97,6 +97,10 @@ collection = PolyCollection(vertices,
 ax.add_collection(collection)
 plt.show()
 ```
+
+You can notice that we are able to see through the cube (grey back lines)
+thanks to the transparent color of each faces. This works only because we have
+sorted the faces.
 
 <br clear="both"/>
 

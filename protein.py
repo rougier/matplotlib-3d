@@ -2,7 +2,8 @@
 # Copyright (c) 2020 Nicolas P. Rougier. All rights reserved.
 # Distributed under the (new) BSD License.
 # -----------------------------------------------------------------------------
-# This example shows how to display a mesh
+# This example shows how to display a scatter plot and to manipulate colors
+# based on zbuffer to suggest depth.
 # -----------------------------------------------------------------------------
 import numpy as np
 from mpl3d import glm

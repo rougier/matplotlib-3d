@@ -48,4 +48,6 @@ if __name__ == "__main__":
     camera = Camera(theta=65, phi=40)
     cube = Cube(ax, camera.transform)
     camera.connect(ax, cube.update)
+
+    plt.savefig("cube.png", dpi=600)
     plt.show()

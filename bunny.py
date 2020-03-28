@@ -39,4 +39,5 @@ if __name__ == "__main__":
     mesh = Mesh(ax, camera.transform, vertices, faces,
                 cmap=plt.get_cmap("magma"),  edgecolors=(0,0,0,0.25))
     camera.connect(ax, mesh.update)
+    plt.savefig("bunny.png", dpi=600)
     plt.show()

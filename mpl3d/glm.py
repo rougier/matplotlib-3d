@@ -12,6 +12,14 @@ def clip(V, vmin=0, vmax=1):
     return np.minimum(np.maximum(V,vmin),vmax)
 
 
+def viewport(x, y, w, h, d):
+    """ Viewport matrix """
+    return np.array([[w/2, 0, 0, x+w/2],
+                     [0, h/2, 0, y+h/2],
+                     [0, 0, d/2,   d/2],
+                     [0, 0, 0,       1]])
+
+
 def frustum(left, right, bottom, top, znear, zfar):
     """Create view frustum
 
@@ -227,14 +235,20 @@ def fit_unit_cube(V):
     return V
 
     
-def transform(V, mvp):
+def transform(V, mvp, viewport=None):
     """
     Apply transform mvp to vertices V
 
     Parameters
     ----------
     V : (n,3) array
-        Vertices array
+      Vertices array
+
+    mvp: 4x4 array
+      Transform matrix
+
+    viewport: 4x4 array
+      Viewport matrix (default is None)
 
     Returns
     -------
@@ -247,6 +261,8 @@ def transform(V, mvp):
     ones = np.ones(len(V), dtype=float)
     V = np.c_[V.astype(float), ones]      # Homogenous coordinates
     V = V @ mvp.T                         # Transformed coordinates
+    if viewport is not None:
+        V = V @ viewport.T
     V = V/V[:,3].reshape(-1,1)            # Normalization
     V = V[:,:3]                           # Normalized device coordinates
     return V.reshape(shape)

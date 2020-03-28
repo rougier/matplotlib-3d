@@ -84,4 +84,5 @@ if __name__ == "__main__":
             transform=ax.transAxes, ha="right", va="top")
 
 plt.tight_layout()
+plt.savefig("bunnies.png", dpi=600)
 plt.show()

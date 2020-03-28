@@ -46,4 +46,6 @@ if __name__ == "__main__":
     mesh = Mesh(ax, camera.transform, vertices, faces,
                 facecolors=facecolors, edgecolors="white", mode="all")
     camera.connect(ax, mesh.update)
+
+    plt.savefig("checkered-sphere.png", dpi=600)
     plt.show()

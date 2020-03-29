@@ -171,4 +171,10 @@ the image on the left, you can clearly see the effect. However, if you look
 from a distance, this does the trick.
 
 
+<br clear="both"/>
+
+### Lighting
+
+<img src="spheres.png" alt="Lighting example" width="25%" align="right">
+
 

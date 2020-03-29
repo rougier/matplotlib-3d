@@ -170,6 +170,12 @@ this will result in those grey points to shadow furhter points. If you enlarge
 the image on the left, you can clearly see the effect. However, if you look
 from a distance, this does the trick.
 
+<br clear="both"/>
+
+### Heightfield
+
+<img src="elevation.png" alt="Heightfield example" width="25%" align="right">
+
 
 <br clear="both"/>
 

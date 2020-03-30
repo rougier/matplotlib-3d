@@ -12,7 +12,7 @@ class Camera():
 
     This camera can be used for static or interactive rendering with mouse
     controlled movements. In this latter case, it is necessary to connect the
-    camera to a mtplotlib axes using the `connect` method and to provide an
+    camera to a matplotlib axes using the `connect` method and to provide an
     update function that will be called each time an update is necessary
     relatively to the new transform.
 

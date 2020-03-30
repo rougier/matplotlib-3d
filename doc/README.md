@@ -110,14 +110,14 @@ sorted the faces.
 
 <img src="bunny.png" alt="Mesh example" width="25%" align="right">
 
-The [Mesh](mpl3d/mesh.py) object allows to render a mesh that is described by a
+The [Mesh](../mpl3d/mesh.py) object allows to render a mesh that is described by a
 set of vertices and a set of faces made of triangles. It is the responsability
 of the user to provide the vertices and the faces. They can be generated
 manually as for example in our cube example but it is generally easier to load
 them from a file. The simplified [Stanford
 bunny](https://en.wikipedia.org/wiki/Stanford_bunny) displayed on the right has
 been loaded from a wavefront object file that has the advantage of being very
-simple to parse (see [bunny.py](bunny.py)). Note that the mesh object has an
+simple to parse (see [bunny.py](../bunny.py)). Note that the mesh object has an
 update method such that it can be made interactive when the camera is
 connected:
 ```Python

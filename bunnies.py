@@ -8,22 +8,7 @@ import numpy as np
 from mpl3d import glm
 from mpl3d.mesh import Mesh
 from mpl3d.camera import Camera
-
-# Wavefront loader (only vertices and faces)
-def obj_load(filename):
-    V, Vi = [], []
-    with open(filename) as f:
-       for line in f.readlines():
-           if line.startswith('#'): continue
-           values = line.split()
-           if not values: continue
-           if values[0] == 'v':
-               V.append([float(x) for x in values[1:4]])
-           elif values[0] == 'f' :
-               Vi.append([int(x) for x in values[1:4]])
-    V, Vi = np.array(V), np.array(Vi)-1
-    V = glm.fit_unit_cube(V)
-    return V, Vi
+import meshio
 
 
 def subplot(index):
@@ -51,7 +36,9 @@ if __name__ == "__main__":
     fig = plt.figure(figsize=(8,8))
 
     # Model loading
-    vertices, faces = obj_load("data/bunny.obj")
+    mesh = meshio.read("data/bunny.obj")
+    vertices = mesh.points
+    faces = mesh.cells[0].data
     
     ax = subplot(221)
     ax.axis("off")

@@ -8,21 +8,7 @@ import numpy as np
 from mpl3d import glm
 from mpl3d.mesh import Mesh
 from mpl3d.camera import Camera
-
-# Simplified wavefront loader (only vertices and faces)
-def obj_load(filename):
-    V, Vi = [], []
-    with open(filename) as f:
-       for line in f.readlines():
-           if line.startswith('#'): continue
-           values = line.split()
-           if not values: continue
-           if values[0] == 'v':
-               V.append([float(x) for x in values[1:4]])
-           elif values[0] == 'f' :
-               Vi.append([int(x) for x in values[1:4]])
-    return np.array(V), np.array(Vi)-1
-
+import meshio
 
 
 # --- main --------------------------------------------------------------------
@@ -34,7 +20,9 @@ if __name__ == "__main__":
     ax.axis("off")
 
     camera = Camera("ortho", scale=2)
-    vertices, faces = obj_load("data/bunny.obj")
+    mesh = meshio.read("data/bunny.obj")
+    vertices = mesh.points
+    faces = mesh.cells[0].data
     vertices = glm.fit_unit_cube(vertices)
     mesh = Mesh(ax, camera.transform, vertices, faces,
                 cmap=plt.get_cmap("magma"),  edgecolors=(0,0,0,0.25))

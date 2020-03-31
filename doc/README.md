@@ -179,8 +179,16 @@ from a distance, this does the trick.
 
 <br clear="both"/>
 
+### Bars / histogram
+
+<img src="bar.png" alt="istogram example" width="25%" align="right">
+
+
+<br clear="both"/>
+
 ### Lighting
 
 <img src="spheres.png" alt="Lighting example" width="25%" align="right">
+
 
 

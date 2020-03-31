@@ -19,3 +19,9 @@ Matplotlib](https://matplotlib.org/matplotblog/posts/custom-3d-engine/).
 [Read the documentation](doc/README.md)
 
 ![](doc/bunnies.png)
+
+# Install
+
+You can install by pip command.
+
+`pip install git+https://github.com/rougier/matplotlib-3d`

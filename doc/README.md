@@ -181,7 +181,14 @@ from a distance, this does the trick.
 
 ### Bars / histogram
 
-<img src="bar.png" alt="istogram example" width="25%" align="right">
+<img src="bar.png" alt="histogram example" width="25%" align="right">
+
+
+<br clear="both"/>
+
+### Volume rendering
+
+<img src="volume.png" alt="Volume rendering" width="25%" align="right">
 
 
 <br clear="both"/>

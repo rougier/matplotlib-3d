@@ -1,4 +1,7 @@
+
 # Experimental 3d axis for matplotlib
+
+<img src="doc/bunny.png" alt="Multiviews" width="33%" align=right>
 
 This experimental project is an attempt at providing a better and more
 versatile 3d axis for [Matplotlib](https://matplotlib.org). The heart of the
@@ -17,8 +20,6 @@ Matplotlib](https://matplotlib.org/matplotblog/posts/custom-3d-engine/).
 > top of the other.
 
 [Read the documentation](doc/README.md)
-
-![](doc/bunnies.png)
 
 # Install
 

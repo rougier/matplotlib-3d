@@ -62,9 +62,9 @@ class Mesh():
         elif self.mode == "back":
             front, back = glm.frontback(T)
             T, Z = T[back], Z[back]
-            if len(facecolors) == len(faces):
+            if len(facecolors) == len(self.faces):
                 facecolors = facecolors[back]
-            if len(edgecolor) == len(faces):
+            if len(edgecolor) == len(self.faces):
                 edgecolors = edgecolors[back]
 
         # Separate 2d triangles from zbuffer

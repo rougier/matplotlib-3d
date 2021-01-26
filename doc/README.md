@@ -136,7 +136,7 @@ camera.connect(ax, mesh.update)
 
 A 3d axes lives inside a regular matplotlib axes such that it is
 possible to have several 3d axes on the same figure. On the
-[bunnies.py](bunnies.py) example on the right, there are four 3d axes. Three
+[bunnies.py](../bunnies.py) example on the right, there are four 3d axes. Three
 are using an orthographic camera and the upper left is using a perspective
 camera that is connected to the mouse, meaning you can rotate and zoom the
 rendering by moving and scrolling the mouse when it is over the underlying

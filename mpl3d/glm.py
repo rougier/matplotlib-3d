@@ -48,7 +48,7 @@ def frustum(left, right, bottom, top, znear, zfar):
     M[1, 1] = +2.0 * znear / (top - bottom)
     M[2, 2] = -(zfar + znear) / (zfar - znear)
     M[0, 2] = (right + left) / (right - left)
-    M[2, 1] = (top + bottom) / (top - bottom)
+    M[1, 2] = (top + bottom) / (top - bottom)
     M[2, 3] = -2.0 * znear * zfar / (zfar - znear)
     M[3, 2] = -1.0
     return M

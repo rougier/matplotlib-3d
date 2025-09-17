@@ -98,6 +98,7 @@ class Camera():
             self.zoom = min(1.1*self.zoom, self.zoom_max)
         self.axes.set_xlim(-self.zoom,self.zoom)
         self.axes.set_ylim(-self.zoom,self.zoom)
+        self.update(self.transform)
         self.figure.canvas.draw()
 
         

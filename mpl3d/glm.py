@@ -112,7 +112,7 @@ def ortho(left, right, bottom, top, znear, zfar):
     return M
 
 
-def scale(x=1, y=None, z=None):
+def scale(x: float=1, y=None, z=None):
     """Non-uniform scaling along the x, y, and z axes
 
     Parameters
@@ -137,7 +137,7 @@ def scale(x=1, y=None, z=None):
                      [0, 0, 0, 1]], dtype=float)
 
 
-def translate(x=0, y=0, z=0):
+def translate(x:float=0, y:float=0, z:float=0):
     """
     Translate by an offset (x, y, z) .
 
@@ -161,7 +161,7 @@ def translate(x=0, y=0, z=0):
                      [0, 0, 0, 1]], dtype=float)
 
 
-def xrotate(theta=0):
+def xrotate(theta:float=0):
     """Rotation about the X axis
 
     Parameters
@@ -181,7 +181,7 @@ def xrotate(theta=0):
                      [0, s,  c, 0],
                      [0, 0,  0, 1]], dtype=float)
 
-def yrotate(theta=0):
+def yrotate(theta:float=0):
     """Rotation about the Y axis
 
     Parameters
@@ -201,7 +201,7 @@ def yrotate(theta=0):
                       [-s, 0, c, 0],
                       [ 0, 0, 0, 1]], dtype=float)
 
-def zrotate(theta=0):
+def zrotate(theta:float=0):
     """Rotation about the Z axis
 
     Parameters
